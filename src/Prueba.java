@@ -10,8 +10,8 @@ class thread implements Runnable  {
             e.printStackTrace(); 
         } 
           
-        System.out.println("State of thread1 while it called join() "
-        		+ "method on thread2 -"+ Prueba.thread1.getState()); 
+        System.out.println("Estado del Hilo1 mientras se llamaba al metodo join() "
+        		+ "en el Hilo2 -"+ Prueba.thread1.getState()); 
         try { 
             Thread.sleep(200); 
         }  
@@ -31,11 +31,11 @@ public class Prueba implements Runnable {
         thread1 = new Thread(obj); 
           
         // thread1 created and is currently in the NEW state. 
-        System.out.println("State of thread1 after creating it - " + thread1.getState()); 
+        System.out.println("Estado del Hilo1 despues de crearlo - " + thread1.getState()); 
         thread1.start(); 
           
         // thread1 moved to Runnable state 
-        System.out.println("State of thread1 after calling .start() method on it - " +  
+        System.out.println("Estado del Hilo1 despues de llamar al metodo .start() en el - " +  
         thread1.getState()); 
 	}
 
@@ -45,11 +45,11 @@ public class Prueba implements Runnable {
         Thread thread2 = new Thread(myThread); 
           
         // thread1 created and is currently in the NEW state. 
-        System.out.println("State of thread2 after creating it - "+ thread2.getState()); 
+        System.out.println("Estado del Hilo2 despues de crearlo - "+ thread2.getState()); 
         thread2.start(); 
           
         // thread2 moved to Runnable state 
-        System.out.println("State of thread2 after calling .start() method on it - " +  
+        System.out.println("Estado del Hilo2 despues de llamar al metodo .start() en el - " +  
         thread2.getState()); 
           
         // moving thread1 to timed waiting state 
@@ -60,7 +60,7 @@ public class Prueba implements Runnable {
         catch (InterruptedException e) { 
             e.printStackTrace(); 
         } 
-        System.out.println("State of thread2 after calling .sleep() method on it - "+  
+        System.out.println("Estado del hilo1 despues de llamar al metodo .sleep() en el - "+  
         thread2.getState() ); 
           
         try { 
@@ -70,7 +70,7 @@ public class Prueba implements Runnable {
         catch (InterruptedException e) { 
             e.printStackTrace(); 
         } 
-        System.out.println("State of thread2 when it has finished it's execution - " +  
+        System.out.println("Estado del Hilo2 cuando a finalizado su ejecucion - " +  
         thread2.getState()); 
 	}
 }
