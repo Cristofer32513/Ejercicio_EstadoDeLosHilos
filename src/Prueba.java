@@ -1,12 +1,13 @@
 // Java program to demonstrate thread states 
+
 class thread implements Runnable  { 
 	
 	public void run()  { 
-        // moving thread2 to timed waiting state 
+        
+		// moving thread2 to timed waiting state 
         try {
         	Thread.sleep(1500); 
-        }  
-        catch (InterruptedException e) { 
+        }catch (InterruptedException e) { 
             e.printStackTrace(); 
         } 
           
@@ -14,8 +15,7 @@ class thread implements Runnable  {
         		+ "en el Hilo2 -"+ Prueba.thread1.getState()); 
         try { 
             Thread.sleep(200); 
-        }  
-        catch (InterruptedException e) { 
+        }catch (InterruptedException e) { 
             e.printStackTrace(); 
         }      
     } 
@@ -56,8 +56,7 @@ public class Prueba implements Runnable {
         try { 
             //moving thread1 to timed waiting state 
             Thread.sleep(200); 
-        }  
-        catch (InterruptedException e) { 
+        }catch (InterruptedException e) { 
             e.printStackTrace(); 
         } 
         System.out.println("Estado del hilo1 despues de llamar al metodo .sleep() en el - "+  
@@ -66,8 +65,7 @@ public class Prueba implements Runnable {
         try { 
             // waiting for thread2 to die 
             thread2.join(); 
-        }  
-        catch (InterruptedException e) { 
+        }catch (InterruptedException e) { 
             e.printStackTrace(); 
         } 
         System.out.println("Estado del Hilo2 cuando a finalizado su ejecucion - " +  
